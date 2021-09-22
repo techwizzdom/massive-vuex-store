@@ -9,7 +9,7 @@
 <script>
 import { mapMutations, mapState } from 'vuex'
 import { SET_USER_NAME } from './store/userModule'
-import { SET_ORGANISATION_NAME } from './store/organisationModule'
+import { SET_ORGANISATION_NAME } from './store/modules/organisation/types'
 
 export default {
   name: 'App',
