@@ -8,7 +8,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
-import { SET_USER_NAME } from './store/userModule'
+import { SET_USER_NAME } from './store/modules/user/types'
 import { SET_ORGANISATION_NAME } from './store/modules/organisation/types'
 
 export default {

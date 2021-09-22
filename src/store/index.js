@@ -1,10 +1,21 @@
 import { createStore } from 'vuex'
-import userModule from './userModule'
-import organisationModule from './organisationModule'
+import userModule from './modules/user'
+import organisationModule from './modules/organisation'
+
+const state = {}
+const actions = ({})
+const mutations = ({})
+const getters = ({})
+
+const modules = {
+  user: userModule,
+  organisation: organisationModule
+}
 
 export default createStore({
-  modules: {
-    user: userModule,
-    organisation: organisationModule
-  }
+  state,
+  actions,
+  mutations,
+  getters,
+  modules
 })
