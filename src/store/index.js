@@ -1,18 +1,10 @@
 import { createStore } from 'vuex'
+import userModule from './userModule'
+import organisationModule from './organisationModule'
 
 export default createStore({
-  state: {
-    user: null,
-    organisation: null,
-  },
-  mutations: {
-    setUser(state, user) {
-      state.user = user
-    },
-    setOrganisation(state, organisation) {
-      state.organisation = organisation
-    }
-  },
-  actions: {},
-  modules: {},
+  modules: {
+    user: userModule,
+    organisation: organisationModule
+  }
 })

@@ -1,29 +1,38 @@
 <template>
-  <button @click="setUser(userData)">Set user</button>
-  <div>First name: {{user?.firstName}}</div>
-  <div>Last name: {{user?.lastName}}</div>
+  <button @click="setUserName(userNameData)">Set user name</button>
+  <div>User name: {{userName}}</div>
+
+  <button @click="setOrganisationName(organisationNameData)">Set organisation name</button>
+  <div>Organisation name: {{organisationName}}</div>
 </template>
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { SET_USER_NAME } from './store/userModule'
+import { SET_ORGANISATION_NAME } from './store/organisationModule'
 
 export default {
   name: 'App',
   data() {
     return {
-      userData: {
-        firstName: 'Domagoj',
-        lastName: 'Vidovic'
-      }
+      userNameData: 'Domagoj Vidovic',
+      organisationNameData: 'Orbital Witness'
     }
   },
   computed: {
-    ...mapState(['user'])
+    ...mapState({
+      userName: (state) => state.user.name,
+      organisationName: (state) => state.organisation.name
+    })
   },
   methods: {
-    ...mapMutations(['setUser'])
+    ...mapMutations('organisation', {
+      setOrganisationName: SET_ORGANISATION_NAME
+    }),
+    ...mapMutations('user', {
+      setUserName: SET_USER_NAME
+    })
   },
-
 }
 </script>
 
