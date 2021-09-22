@@ -1,16 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <button @click="setUser(userData)">Set user</button>
+  <div>First name: {{user?.firstName}}</div>
+  <div>Last name: {{user?.lastName}}</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      userData: {
+        firstName: 'Domagoj',
+        lastName: 'Vidovic'
+      }
+    }
   },
+  computed: {
+    ...mapState(['user'])
+  },
+  methods: {
+    ...mapMutations(['setUser'])
+  },
+
 }
 </script>
 
