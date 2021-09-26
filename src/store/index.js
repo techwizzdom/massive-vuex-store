@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import userModule from './modules/user'
 import organisationModule from './modules/organisation'
-import {Module} from './modules'
+import { Module } from './modules'
 
 const state = {}
 const actions = ({})
