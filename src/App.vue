@@ -10,6 +10,7 @@
 import { mapMutations, mapState } from 'vuex'
 import { SET_USER_NAME } from './store/modules/user/types'
 import { SET_ORGANISATION_NAME } from './store/modules/organisation/types'
+import { Module } from './store/modules'
 
 export default {
   name: 'App',
@@ -26,10 +27,10 @@ export default {
     })
   },
   methods: {
-    ...mapMutations('organisation', {
+    ...mapMutations(Module.ORGANISATION, {
       setOrganisationName: SET_ORGANISATION_NAME
     }),
-    ...mapMutations('user', {
+    ...mapMutations(Module.USER, {
       setUserName: SET_USER_NAME
     })
   },
